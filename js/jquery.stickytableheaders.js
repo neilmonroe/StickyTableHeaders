@@ -1,5 +1,14 @@
 /*! Copyright (c) 2011 by Jonas Mosbech - https://github.com/jmosbech/StickyTableHeaders
 	MIT license info: https://github.com/jmosbech/StickyTableHeaders/blob/master/license.txt */
+(function(factory) {
+	if (typeof define === 'function' && define.amd) {
+		define(['jquery'], factory);
+	} else if (typeof module === 'object' && typeof module.exports === 'object') {
+		module.exports = factory(require('jquery'));
+	} else {
+		factory(jQuery);
+	}
+}(function(jQuery) {
 
 ;(function ($, window, undefined) {
 	'use strict';
@@ -314,3 +323,6 @@
 	};
 
 })(jQuery, window);
+
+return jQuery.stickyTableHeaders;
+}));
